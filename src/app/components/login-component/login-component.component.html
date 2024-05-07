@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-md-4">
+      <mat-card class="mat-card">
+        <mat-card-header style="justify-content: center;" class="m-button">
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 text-danger"
+                                *ngIf="username == '' && isClicked">
+                                Username is required
+                    </div>
+                    <mat-form-field class="col-md-12">
+                        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                      </mat-form-field>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12 text-danger"
+                                *ngIf="password == '' && isClicked">
+                                Password is required
+                    </div>
+                    <mat-form-field class="col-md-12">
+                        <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+                      </mat-form-field>
+                </div>
+                <div class="col-md-12">
+                    <div style="display: grid;">
+                        <button mat-raised-button color="primary" class="m-button" (click)="login()">Login</button> 
+                        <button mat-raised-button color="primary" class="m-button" (click)="SignUp()">Sign up </button>
+                    </div>
+                </div>   
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

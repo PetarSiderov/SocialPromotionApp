@@ -17,6 +17,7 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     AppHeaderComponent,
     SpinnerComponent,
     AccountsComponent,
+    LoginComponentComponent,
     
   ],
   imports: [

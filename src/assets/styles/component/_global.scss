@@ -45,6 +45,16 @@ html .page-wrapper {
   }
 }
 
+html .page-wrapper-login {
+  height: 100%;
+
+  .page-content {
+    padding: 0px 0px;
+    max-width: auto;
+    margin: 0 auto;
+  }
+}
+
 // a tag
 
 a:hover,

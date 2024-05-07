@@ -5,7 +5,7 @@
     <!-- ============================================================== -->
     <!-- Topbar - style you can find in header.scss -->
     <!-- ============================================================== -->
-    <mat-toolbar color="primary" class="topbar telative">
+    <mat-toolbar color="primary" class="topbar telative" *ngIf="isLogged">
         <!-- ============================================================== -->
         <!-- Logo - style you can find in header.scss -->
         <!-- ============================================================== -->
@@ -31,13 +31,13 @@
         <!-- sidebar toggle -->
         <!-- ============================================================== -->
         
-        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+        <button mat-icon-button  *ngIf="isLogged" (click)="snav.toggle()" value="sidebarclosed">
             <mat-icon>menu</mat-icon>
         </button>
         <!-- ============================================================== -->
         <!-- app header component - style you can find in header.scss / header.component.ts-->
         <!-- ============================================================== -->
-        <app-header class="d-flex align-items-center ml-auto"></app-header>
+        <app-header *ngIf="isLogged" class="d-flex align-items-center ml-auto"></app-header>
     </mat-toolbar>
     <!-- ============================================================== -->
     <!-- End Topbar - style you can find in pages.scss -->
@@ -46,9 +46,9 @@
         <!-- ============================================================== -->
         <!-- Sidebar - style you can find in sidebar.scss -->
         <!-- ============================================================== -->
-        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
+        <mat-sidenav  #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
             
-                <app-sidebar></app-sidebar>
+                <app-sidebar *ngIf="isLogged"></app-sidebar>
                
             
         </mat-sidenav>
@@ -59,7 +59,7 @@
         <!-- ============================================================== -->
         <!-- Page container - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <mat-sidenav-content class="page-wrapper">
+        <mat-sidenav-content *ngIf="isLogged" [ngClass]="{'page-wrapper-login' : !isLogged , 'page-wrapper': isLogged }">
                  
                 <div class="page-content">
                    
@@ -72,4 +72,6 @@
         <!-- Page container - style you can find in pages.scss -->
         <!-- ============================================================== -->
     </mat-sidenav-container>
+
+    <router-outlet *ngIf="!isLogged"><app-spinner></app-spinner></router-outlet>
 </div>
