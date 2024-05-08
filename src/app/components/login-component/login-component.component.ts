@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login-component',
@@ -11,7 +12,8 @@ export class LoginComponentComponent {
   password: string = '';
   isClicked: boolean = false;
 
-  constructor(private router: Router
+  constructor(private router: Router,
+    private authenticationService: AuthenticationService
    ){
     
   }
@@ -25,7 +27,7 @@ export class LoginComponentComponent {
     if(this.username === '' || this.password === ''){
       return 
     }
-   // this.loginService.login(this.username,this.password)
+    this.authenticationService.login(this.username,this.password)
     // Add your login logic here, such as sending a request to your backend for authentication.
   }
 

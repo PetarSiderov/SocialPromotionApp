@@ -18,6 +18,8 @@ import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { LoginComponentComponent } from './components/login-component/login-comp
     SpinnerComponent,
     AccountsComponent,
     LoginComponentComponent,
+    SignUpComponent,
     
   ],
   imports: [
@@ -34,9 +37,10 @@ import { LoginComponentComponent } from './components/login-component/login-comp
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
-    SharedModule,
     RouterModule.forRoot(AppRoutes),
+    SharedModule,
     AppSidebarComponent
   ],
   providers: [
