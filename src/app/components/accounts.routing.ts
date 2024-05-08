@@ -7,9 +7,5 @@ export const AccountRoutes: Routes = [
   {
     path: 'account',
     component: AccountsComponent
-  },
-  {
-    path: 'sign-up',
-    component: SignUpComponent
   }
 ]
