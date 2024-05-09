@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         if (currentUser.token !== undefined) {
             // authorised so return true
             if(state.url == '/' || state.url == '/login' || state.url == '/sign-up'){
-                this.router.navigate(['/grid'])
+                this.router.navigate(['/dashboard'])
                 return true;
             }
             return true;
@@ -34,7 +34,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         if (currentUser.token !== undefined) {
             // authorised so return true
             if(state.url == '/' || state.url == '/login' || state.url == '/sign-up'){
-                this.router.navigate(['/grid'])
+                this.router.navigate(['/dashboard'])
                 return true;
             }
             return true;

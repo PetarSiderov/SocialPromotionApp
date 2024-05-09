@@ -29,30 +29,24 @@ export class FullComponent implements OnDestroy, AfterViewInit {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.userStats = authservice.getUserStatus();
-    debugger
     if (!Object.keys(this.userStats).length) {
-      // authorised so return true
       this.isLogged = false;
     }
   }
 
   ngOnInit(): void {
     this.authservice.isLoggedUser?.subscribe(s => {
-      if (!Object.keys(s).length) {
+      if (s.token != undefined) {
         this.isLogged = false;
-        this.router.navigate(["/dashboard"])
+        this.router.navigate(['/dashboard'])
       }
-      else{
+      else if(s.token == undefined) {
         this.isLogged = true;
         this.router.navigate(['/login'])
       }
     })
   }
 
-  test(snav: any){
-    debugger
-    snav.toggle()
-  }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

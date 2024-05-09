@@ -22,7 +22,6 @@ export class AppSidebarComponent implements OnDestroy {
     media: MediaMatcher,
     public menuItems: MenuItems
   ) {
-    debugger
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
     this.menuItemsConstructor = menuItems.getMenuitem();
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

@@ -16,7 +16,7 @@ $headingfont: 'Poppins', sans-serif;
 
 $mat-primary: (
   100: #ebf9fa,
-  500: #1e88e5,
+  500: #94b7d8,
   700: #1e88e5,
   contrast: (
     100: rgba(black, 0.87),
@@ -26,8 +26,8 @@ $mat-primary: (
 );
 $mat-secondary: (
   100: #fff5f2,
-  500: #26c6da,
-  700: #26c6da,
+  500: #94b7d8,
+  700: #94b7d8,
   contrast: (
     100: white,
     500: white,
@@ -100,9 +100,9 @@ $sidebar-icons: #99abb4;
 $font-16: 16px;
 
 $light-text: #a6b7bf;
-$themecolor: #1e88e5;
-$themecolor-alt: #26c6da;
-$themecolor-dark: #028ee1;
+$themecolor: #94b7d8;
+$themecolor-alt: #94b7d8;
+$themecolor-dark: #94b7d8;
 
 /*bootstrap Color*/
 $danger: #fc4b6c;

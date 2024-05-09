@@ -11,27 +11,22 @@
         <!-- ============================================================== -->
         <div class="navbar-header" *ngIf="isLogged">
             <a class="navbar-brand" href="index.html">
-                <!-- Logo icon --><b>
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo">
-                    <!-- Light Logo icon -->
-                    <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo">
-                </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span class="text-logo-icon" fxShow="false" fxShow.gt-xs>
                  <!-- dark Logo text -->
-                 <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo">
+                 <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"> -->
                  <!-- Light Logo text -->    
-                 <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage">
-                </span> </a>
+                 <img width="65" height="50" style="padding: 6px" src="assets/images/logo_transparent_cover-without-text.png" class="light-logo" alt="homepage">
+                 <img width="100" height="40" style="padding: 6px" src="assets/images/logo_transparent-text.png" class="light-logo" alt="homepage">
+                </span>
+             </a>
         </div>
         <!-- ============================================================== -->
         <!-- sidebar toggle -->
         <!-- ============================================================== -->
         
-        <button mat-icon-button (click)="test(snav)" value="sidebarclosed">
+        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
             <mat-icon>menu</mat-icon>
         </button>
         <!-- ============================================================== -->
