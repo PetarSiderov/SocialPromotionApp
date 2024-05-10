@@ -20,6 +20,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TelegramPhoneNumbersComponent } from './components/telegram-phone-numbers/telegram-phone-numbers.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     AccountsComponent,
     LoginComponentComponent,
     SignUpComponent,
+    TelegramPhoneNumbersComponent,
     
   ],
   imports: [
