@@ -1,7 +1,7 @@
 <div class="container">
     <mat-card>  
         <mat-card-header> 
-             <button style="padding: 20px;" mat-raised-button color="accent" matTooltip="Tooltip!" matTooltipPosition="above">Add new Account</button>
+             <button style="padding: 20px;" routerLink="/telegram-new-accounts" mat-raised-button color="accent" matTooltip="Tooltip!" matTooltipPosition="above">Add new Account</button>
         </mat-card-header>
     <br>
     <div class="row col-md-12">
@@ -18,7 +18,7 @@
                     </div>
                     
                     <div class="col-md-12 padding-20">
-                        <span>Number of posts: {{element.phone}}</span>
+                        <span>Number of posts: {{element.number_of_posts}}</span>
                     </div>
                     
                     <div class="col-md-12 padding-20">

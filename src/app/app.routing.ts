@@ -6,6 +6,7 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { TelegramPhoneNumbersModule } from './components/telegram-phone-numbers/telegram-phone-numbers.module';
 import { TelegramPhoneNumbersComponent } from './components/telegram-phone-numbers/telegram-phone-numbers.component';
+import { TelegramNewAccountsComponent } from './components/telegram-new-accounts/telegram-new-accounts.component';
 
 export const AppRoutes: Routes = [
   {
@@ -30,6 +31,11 @@ export const AppRoutes: Routes = [
         () => import('./components/telegram-phone-numbers/telegram-phone-numbers.module').then(m => m.TelegramPhoneNumbersModule)
       },
       {
+        path: '',
+        loadChildren:
+        () => import('./components/telegram-new-accounts/telegram-new-accounts.module').then(m => m.TelegramNewPhoneNumbersModule)
+      },
+      {
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       }
@@ -50,6 +56,12 @@ export const AppRoutes: Routes = [
   {
     path: 'telegram-phone-numbers',
     component: TelegramPhoneNumbersComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'telegram-new-accounts',
+    component: TelegramNewAccountsComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard]
   }
