@@ -36,4 +36,17 @@ export class ApiService {
       this.headers = this.JWTtoken ? new HttpHeaders().set('Authorization', `Bearer ${this.JWTtoken}`) : null;
       return this.http.get<any>(this.url+`/api/TelegramApi/get-all-user-phones`, { headers: this.headers });
     }
+
+    public getGroupsUser(userPhone: any){
+        var localStorage = this.authService.getUserStatus();
+        if(localStorage !== '{}'){
+            this.JWTtoken = localStorage.token;
+        }
+        else {
+            this.JWTtoken = ''
+        }
+
+      this.headers = this.JWTtoken ? new HttpHeaders().set('Authorization', `Bearer ${this.JWTtoken}`) : null;
+      return this.http.get<any>(this.url+`/api/TelegramApi/get-groups-channels-for-account?phoneNumber=`+userPhone, { headers: this.headers });
+    }
 }

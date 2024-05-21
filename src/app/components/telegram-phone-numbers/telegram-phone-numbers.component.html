@@ -1,33 +1,68 @@
 <div class="container">
     <mat-card>  
         <mat-card-header> 
-             <button style="padding: 20px;" routerLink="/telegram-new-accounts" mat-raised-button color="accent" matTooltip="Tooltip!" matTooltipPosition="above">Add new Account</button>
+             <button *ngIf="showAccounts" style="padding: 20px;" routerLink="/telegram-new-accounts" mat-raised-button color="accent" matTooltip="Tooltip!" matTooltipPosition="above">Add new Account</button>
         </mat-card-header>
+        <mat-card-header> 
+            <button *ngIf="!showAccounts" style="padding: 20px;" (click)="submit(true, null)" mat-raised-button color="accent" matTooltip="Tooltip!" matTooltipPosition="above">Back to Accounts</button>
+       </mat-card-header>
     <br>
-    <div class="row col-md-12">
-        <div *ngFor="let element of phoneNumbers" class="col-md-6">
-            <mat-card style="background-color: #EEF5F9;">
-                <mat-card-header>
-                  <mat-card-title>{{element.user_name}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content class="col-md-6">
-            
-                  <div class="row">
-                    <div class="col-md-12 padding-20">
-                        <span>Phone Number: {{element.phone}}</span>
+    <div class="row col-md-12" *ngIf="showAccounts">
+        <div *ngFor="let element of phoneNumbers" class="col-md-6" >
+            <button class="button-telegram" (click)="submit(false,element)">
+                <mat-card style="background-color: #EEF5F9;">
+                    <mat-card-header>
+                    <mat-card-title>{{element.user_name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="col-md-12 content-telegram">
+                
+                    <div class="row">
+                        <div class="col-md-12 padding-20">
+                            <span>Phone Number: {{element.phone}}</span>
+                        </div>
+                        
+                        <div class="col-md-12 padding-20">
+                            <span>Number of posts: {{element.number_of_posts}}</span>
+                        </div>
+                        
+                        <div class="col-md-12 padding-20">
+                            <span>Is active telegram account: {{element.is_active}}</span>
+                        </div>
+                
                     </div>
-                    
-                    <div class="col-md-12 padding-20">
-                        <span>Number of posts: {{element.number_of_posts}}</span>
+                    </mat-card-content>        
+                </mat-card>
+        </button>
+        </div>
+    </div>
+    <div class="row col-md-12" *ngIf="!showAccounts">
+        <div *ngFor="let element of groupChanels" class="col-md-6" >
+            <button class="button-telegram" (click)="submit(false,element)">
+                <mat-card style="background-color: #EEF5F9;">
+                    <mat-card-header>
+                    <mat-card-title>{{element.username}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="col-md-12 content-telegram">
+                
+                    <div class="row">
+                        <div class="col-md-12 padding-20">
+                            <span>Access Hash: {{element.access_hash}}</span>
+                        </div>
+                        
+                        <div class="col-md-12 padding-20">
+                            <span>Admin Rights: {{element.admin_rights === null ? 'No information' : element.admin_rights}}</span>
+                        </div>
+                        
+                        <div class="col-md-12 padding-20">
+                            <span>Default Banned rights: {{element.default_banned_rights  === null ? 'No information' : element.default_banned_rights}}</span>
+                        </div>
+                        <div class="col-md-12 padding-20">
+                            <span>Mega group: {{element.megagroup  === false ? 'No' : 'Yes'}}</span>
+                        </div>
                     </div>
-                    
-                    <div class="col-md-12 padding-20">
-                        <span>Is active telegram account: {{element.is_active}}</span>
-                    </div>
-            
-                  </div>
-                </mat-card-content>        
-            </mat-card>
+                    </mat-card-content>        
+                </mat-card>
+        </button>
         </div>
     </div>
 </mat-card>
