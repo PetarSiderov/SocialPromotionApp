@@ -36,6 +36,16 @@ export const AppRoutes: Routes = [
         () => import('./components/telegram-new-accounts/telegram-new-accounts.module').then(m => m.TelegramNewPhoneNumbersModule)
       },
       {
+        path: '',
+        loadChildren:
+        () => import('./components/truth-social-main/truth-social-main.module').then(m => m.TruthSocialMainModule)
+      },
+      {
+        path: '',
+        loadChildren:
+        () => import('./components/email-main/email-main.module').then(m => m.EmailMainModule)
+      },
+      {
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       }

@@ -37,7 +37,7 @@
     </div>
     <div class="row col-md-12" *ngIf="!showAccounts">
         <div *ngFor="let element of groupChanels" class="col-md-6" >
-            <button class="button-telegram" (click)="submit(false,element)">
+            <button class="button-telegram" >
                 <mat-card style="background-color: #EEF5F9;">
                     <mat-card-header>
                     <mat-card-title>{{element.username}}</mat-card-title>

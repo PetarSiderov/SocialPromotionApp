@@ -22,6 +22,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TelegramPhoneNumbersComponent } from './components/telegram-phone-numbers/telegram-phone-numbers.component';
 import { TelegramNewAccountsComponent } from './components/telegram-new-accounts/telegram-new-accounts.component';
+import { TruthSocialMainComponent } from './components/truth-social-main/truth-social-main.component';
+import { EmailMainComponent } from './components/email-main/email-main.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { TelegramNewAccountsComponent } from './components/telegram-new-accounts
     SignUpComponent,
     TelegramPhoneNumbersComponent,
     TelegramNewAccountsComponent,
+    TruthSocialMainComponent,
+    EmailMainComponent,
     
   ],
   imports: [

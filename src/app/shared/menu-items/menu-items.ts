@@ -11,6 +11,8 @@ const MENUITEMS = [
   { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'av_timer' },
   { state: 'account', type: 'link', name: 'Your accounts', icon: 'crop_7_5' },
   { state: 'telegram-phone-numbers', type: 'link', name: 'Telegram', icon: 'crop_7_5'},
+  { state: 'truth-social-accounts', type: 'link', name: 'Truth Social', icon: 'crop_7_5'},
+  { state: 'emails-main', type: 'link', name: 'Email', icon: 'crop_7_5'}
   // { state: 'grid', type: 'link', name: 'Grid List', icon: 'view_comfy' },
   // { state: 'lists', type: 'link', name: 'Lists', icon: 'view_list' },
   // { state: 'menu', type: 'link', name: 'Menu', icon: 'view_headline' },
